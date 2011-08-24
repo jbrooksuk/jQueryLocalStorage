@@ -25,7 +25,6 @@
 		/* Allow unlimited lifetime */
 		lifeTime = (lifeTime === undefined ? -1 : lifeTime);
 
-		// lS.setItem(key, JSON.stringify(value));
 		lS.setItem(key, JSON.stringify(value));
 		lS.setItem('meta_ct_' + key, __time.getTime());
 		lS.setItem('meta_lt_' + key, lifeTime);
@@ -41,7 +40,6 @@
 		var __time = new Date();
 		/* Will we never expire? */
 		if(JSON.parse(lS.getItem('meta_lt_' + key)) == -1) {
-			// return JSON.parse(lS.getItem(key));
 			return lS.getItem(key);
 		}else{
 			/* Store has expiry date. Did we expire? */
@@ -53,7 +51,6 @@
 				return false;
 			}
 
-			// return JSON.parse(lS.getItem(key));
 			return lS.getItem(key);
 		}
 		return true;

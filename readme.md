@@ -4,12 +4,12 @@ jQuery Local Storage Plugin
 Enable HTML5 local storage in your web apps.
 
 Change log
-==========
+---
 
 _Nothing yet..._
 
 Features
-========
+---
 
 - supportsLS
 - setItem
