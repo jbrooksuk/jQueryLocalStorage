@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery LocalStorage Plugin Test</title>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.localStorage.js"></script>
+	<script type="text/javascript">
+
+	if(!$.localStorage.getItem('test')) {
+		$.localStorage.setItem('test', ['works']);
+		console.log("Dynamic Data!");
+	}else{
+		console.log($.localStorage.getItem('test'));
+		console.log("From Cache!");
+
+		var canDel = confirm("Can I delete this?");
+		if(canDel) {
+			$.localStorage.removeItem('test');
+		}
+	}
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
