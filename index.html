@@ -5,23 +5,24 @@
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 	<script type="text/javascript" src="jquery.localStorage.js"></script>
 	<script type="text/javascript">
+	$(document).ready(function() {
+		if(!$.localStorage.getItem('test')) {
+			$.localStorage.setItem('test', ['works']);
+			$("pre#console").html("Set data!");
+		}else{
+			$("pre#console").html("Current data is: " + $.localStorage.getItem('test'));
 
-	if(!$.localStorage.getItem('test')) {
-		$.localStorage.setItem('test', ['works']);
-		console.log("Dynamic Data!");
-	}else{
-		console.log($.localStorage.getItem('test'));
-		console.log("From Cache!");
-
-		var canDel = confirm("Can I delete this?");
-		if(canDel) {
-			$.localStorage.removeItem('test');
-		}
-	}
+			var canDel = confirm("Can I delete this?");
+			if(canDel) {
+				$.localStorage.removeItem('test');
+				$("pre#console").html("Item removed!");
+			}
+		}		
+	});
 
 	</script>
 </head>
 <body>
-
+	<pre id='console'></pre>
 </body>
 </html>

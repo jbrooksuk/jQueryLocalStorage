@@ -1,7 +1,7 @@
 jQuery Local Storage Plugin
 ==========
 
-Enable HTML5 local storage in your web apps.
+Enable HTML5 local storage in your web apps. Data is stored in a JSON encoded string. This allows your existing web apps to integrate seamlessly into one of the most popular data formats on the web!
 
 Change log
 ---
